@@ -1,8 +1,19 @@
 server:
   port: ${PORT:8081}
-eureka:  client:    service-url:      default-zone: http://localhost:8761/eureka
-  instance:    health-check-url-path: /v1/health
-    status-page-url-path: /v1/info
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka
+  instance:
+    health-check-url-path: /health
+    status-page-url-path: /info
     metadata-map:
        app-owner: mrodriguezul
        description: test microservicio productos
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3307/taproductos?serverTimezone=UTC
+    username: root
+    password: 
+  jpa:
+    generate-ddl: true
